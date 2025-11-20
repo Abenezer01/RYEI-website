@@ -46,8 +46,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-navy font-heading">Email Us</h3>
-                    <p className="text-gray-600 mt-2">info@ryei.org</p>
-                    <p className="text-gray-600">partnerships@ryei.org</p>
+                    <p className="text-gray-600 mt-2">ruralyouthsempowerment25@gmail.com</p>
                   </div>
                 </div>
 
@@ -57,7 +56,7 @@ export default function Contact() {
                   </div>
                   <div>
                     <h3 className="font-bold text-xl text-navy font-heading">Call Us</h3>
-                    <p className="text-gray-600 mt-2">+251 123 456 789</p>
+                    <p className="text-gray-600 mt-2">+251 921 576 359</p>
                   </div>
                 </div>
               </div>
