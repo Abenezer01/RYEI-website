@@ -1,0 +1,1 @@
+// Legacy entry point removed
