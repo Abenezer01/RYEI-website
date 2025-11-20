@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RYEI - Rural Youth Empowerment Initiative</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: '#F9A825', // Sun Gold - Highlights, CTAs
+              'primary-hover': '#EF6C00', // Sunset Orange - Hover states
+              'primary-light': '#FFCA28', // Bright Yellow - Accents
+              secondary: '#2E7D32', // Primary Green - Growth
+              'secondary-light': '#66BB6A', // Light Leaf Green
+              navy: '#0A2A4A', // Deep Navy Blue - Headlines, Text
+              'navy-light': '#153E6A',
+              body: '#333333', // Soft Charcoal - Body text
+              background: '#F6F6F6', // Light Gray - Section backgrounds
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              heading: ['Poppins', 'sans-serif'],
+            },
+            borderRadius: {
+              'xl': '0.75rem',
+              '2xl': '1rem',
+              '3xl': '1.5rem',
+            },
+            backgroundImage: {
+              'gradient-sunrise': 'linear-gradient(135deg, #FFCA28 0%, #F9A825 50%, #EF6C00 100%)',
+              'gradient-navy': 'linear-gradient(to bottom, rgba(10, 42, 74, 0.9), rgba(10, 42, 74, 0.95))',
+            }
+          },
+        },
+      }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 100px;
+      }
+      body {
+        font-family: 'Inter', sans-serif;
+        background-color: #F6F6F6;
+        color: #333333;
+      }
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'Poppins', sans-serif;
+      }
+      ::selection {
+        background-color: #F9A825;
+        color: #0A2A4A;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "framer-motion": "https://aistudiocdn.com/framer-motion@^12.23.24",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "lucide-react": "https://aistudiocdn.com/lucide-react@^0.554.0",
+    "tailwindcss": "https://aistudiocdn.com/tailwindcss@^4.1.17",
+    "next": "https://aistudiocdn.com/next@^16.0.3",
+    "next/": "https://aistudiocdn.com/next@^16.0.3/",
+    "clsx": "https://aistudiocdn.com/clsx@^2.1.1",
+    "tailwind-merge": "https://aistudiocdn.com/tailwind-merge@^3.4.0"
+  }
+}
+</script>
+</head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
