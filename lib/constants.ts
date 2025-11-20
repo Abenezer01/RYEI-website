@@ -5,10 +5,10 @@ import {
   Handshake, 
   Globe, 
   BookOpen, 
-  Landmark,
+  Landmark, 
   Scale
 } from 'lucide-react';
-import { Program, Value, Objective, Stat, Project } from '@/types';
+import { Program, Value, Objective, Stat, Project, TeamMember } from '@/types';
 
 export const MISSION_STATEMENT = "To empower rural youth through entrepreneurship, cooperative development, technology, financial inclusion, and training that promotes inclusive growth and social transformation.";
 
@@ -153,5 +153,36 @@ export const PROJECTS: Project[] = [
     description: "A marketplace initiative connecting rural artisans with urban markets.",
     image: "https://images.unsplash.com/photo-1605116863958-527e2034fa55?q=80&w=2070&auto=format&fit=crop",
     impact: "$50k Generated in Year 1"
+  }
+];
+
+export const TEAM_MEMBERS: TeamMember[] = [
+  {
+    id: '1',
+    name: 'Dr. Abebe Kebede',
+    role: 'Executive Director',
+    bio: 'Over 15 years of experience in rural development, agricultural economics, and youth advocacy.',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop'
+  },
+  {
+    id: '2',
+    name: 'Sara Tadesse',
+    role: 'Program Coordinator',
+    bio: 'Passionate about youth mentorship, gender equality, and community organizing in rural areas.',
+    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop'
+  },
+  {
+    id: '3',
+    name: 'Yonas Alemu',
+    role: 'Technical Lead',
+    bio: 'Expert in agri-tech solutions, digital literacy training, and implementing innovation for rural youth.',
+    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop'
+  },
+  {
+    id: '4',
+    name: 'Hanna Mekonnen',
+    role: 'Finance & Partnerships',
+    bio: 'Specializes in financial inclusion strategies and building partnerships with local institutions.',
+    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1000&auto=format&fit=crop'
   }
 ];

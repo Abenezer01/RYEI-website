@@ -44,8 +44,6 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-3 group">
               <div className={cn("transition-colors", isHome && !scrolled ? "text-white" : "text-primary")}>
-                {/* Use white icon on transparent home header for better visibility, or keep primary if preferred. 
-                    Based on brand guide, Primary is usually preferred, but let's stick to readable contrast. */}
                  <Sun className={cn("h-10 w-10 fill-current", isHome && !scrolled ? "text-primary" : "text-primary")} strokeWidth={1.5} />
               </div>
               <div className="flex flex-col">
