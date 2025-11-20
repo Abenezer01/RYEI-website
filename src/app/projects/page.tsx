@@ -1,9 +1,10 @@
 "use client";
 
-import { SectionWrapper } from '../../components/SectionWrapper';
+import { SectionWrapper } from '@/components/SectionWrapper';
 import { PROJECTS } from '@/lib/constants';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { SocialShare } from '@/components/SocialShare';
 
 export default function Projects() {
   return (
@@ -42,9 +43,17 @@ export default function Projects() {
                      <span className="block text-sm text-gray-400 uppercase tracking-wider font-bold">Impact</span>
                      <span className="text-lg font-bold text-navy">{project.impact}</span>
                    </div>
-                   <button className="p-3 rounded-full bg-background group-hover:bg-primary group-hover:text-navy transition-colors">
-                     <ArrowUpRight className="w-6 h-6" />
-                   </button>
+                   
+                   <div className="flex items-center gap-3">
+                     <SocialShare 
+                        title={`Learn about the ${project.title} at RYEI`} 
+                        description={project.description}
+                        path={`/projects?id=${project.id}`}
+                     />
+                     <button className="p-3 rounded-full bg-background group-hover:bg-primary group-hover:text-navy transition-colors">
+                       <ArrowUpRight className="w-6 h-6" />
+                     </button>
+                   </div>
                 </div>
               </div>
             </motion.div>
