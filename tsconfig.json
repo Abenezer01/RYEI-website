@@ -11,11 +11,13 @@
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "react-jsx",
+    "jsx": "preserve",
     "incremental": true,
-    "baseUrl": "src",
+    "baseUrl": ".",
+
+    // CHANGE THIS:
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["./src/*"]
     },
     "plugins": [
       {
