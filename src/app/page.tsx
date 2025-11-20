@@ -3,22 +3,19 @@
 import Link from 'next/link';
 import { ArrowRight, ChevronDown, Lightbulb, Users, TrendingUp } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { SectionWrapper } from '@/components/layout/SectionWrapper';
+import { SectionWrapper } from '../components/SectionWrapper';
 import { IMPACT_STATS, PROGRAMS, MISSION_STATEMENT } from '@/lib/constants';
 
 export default function Home() {
   return (
     <div className="overflow-hidden font-sans">
-      {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* Background Image & Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
             src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop" 
             alt="Cityscape merging with rural horizon" 
             className="w-full h-full object-cover"
           />
-          {/* Navy Gradient Overlay */}
           <div className="absolute inset-0 bg-navy/80 mix-blend-multiply" />
           <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy/40" />
         </div>
@@ -30,7 +27,6 @@ export default function Home() {
             transition={{ duration: 0.8 }}
             className="max-w-3xl"
           >
-            {/* Badge */}
             <div className="inline-flex mb-8">
               <span className="bg-white/10 backdrop-blur-md text-primary-light border border-white/20 px-5 py-2 rounded-full text-xs font-bold tracking-widest uppercase flex items-center gap-2">
                 <span className="w-2 h-2 bg-primary rounded-full animate-pulse"></span>
@@ -38,21 +34,18 @@ export default function Home() {
               </span>
             </div>
 
-            {/* Headline */}
             <h1 className="text-5xl md:text-7xl font-bold font-heading text-white leading-tight mb-8 tracking-tight">
               Empowering Rural<br />
               Youth for a<br />
               <span className="text-transparent bg-clip-text bg-gradient-sunrise">Sustainable</span> Future
             </h1>
 
-            {/* Subheadline */}
             <p className="text-lg md:text-xl text-gray-200 mb-12 leading-relaxed max-w-xl opacity-90 font-light">
               We strengthen rural communities in Ethiopia through entrepreneurship,
               technology, financial inclusion, and skills training. Join us in driving
               social and economic transformation.
             </p>
 
-            {/* Buttons */}
             <div className="flex flex-col sm:flex-row gap-5">
               <Link 
                 href="/about" 
@@ -70,12 +63,10 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Bottom Elements */}
         <div className="absolute bottom-10 left-0 right-0 flex justify-center z-20 animate-bounce">
           <ChevronDown className="text-white/40 h-8 w-8" />
         </div>
 
-        {/* Floating Action Button */}
         <div className="absolute bottom-10 right-10 z-30 hidden md:block">
           <button className="bg-white p-5 rounded-full shadow-2xl border border-gray-100 text-primary hover:text-primary-hover transition-colors group">
             <Lightbulb className="h-7 w-7 group-hover:scale-110 transition-transform fill-current" />
@@ -83,7 +74,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mission Brief */}
       <SectionWrapper background="white">
         <div className="text-center max-w-4xl mx-auto">
           <h2 className="text-sm font-bold tracking-widest text-secondary uppercase mb-4">Our Mission</h2>
@@ -102,7 +92,6 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
-      {/* Key Focus Areas Preview */}
       <SectionWrapper background="light">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16">
           <div className="max-w-2xl">
@@ -146,7 +135,6 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
-      {/* Feature Split */}
       <SectionWrapper background="white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <div className="relative">
@@ -198,7 +186,6 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
-      {/* CTA Section */}
       <section className="py-24 bg-navy relative overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full filter blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-96 h-96 bg-secondary/10 rounded-full filter blur-3xl translate-x-1/2 translate-y-1/2"></div>

@@ -1,7 +1,7 @@
 "use client";
 
 import React from 'react';
-import { SectionWrapper } from '@/components/layout/SectionWrapper';
+import { SectionWrapper } from '../../components/SectionWrapper';
 import { MapPin, Mail, Phone, Send } from 'lucide-react';
 
 export default function Contact() {
@@ -12,7 +12,6 @@ export default function Contact() {
 
   return (
     <div className="pt-20">
-        {/* Simple Header */}
       <div className="bg-navy py-20 text-center">
          <h1 className="text-4xl md:text-5xl font-bold font-heading text-white">Contact Us</h1>
       </div>
@@ -20,7 +19,6 @@ export default function Contact() {
       <div className="bg-white">
         <SectionWrapper>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            {/* Contact Info */}
             <div>
               <h4 className="text-secondary font-bold tracking-widest uppercase mb-4 text-sm">Get in Touch</h4>
               <h2 className="text-4xl font-bold font-heading text-navy mb-6">Let's Build the Future Together</h2>
@@ -62,7 +60,6 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Contact Form */}
             <div className="bg-background p-10 rounded-3xl shadow-sm border border-gray-100">
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -105,7 +102,6 @@ export default function Contact() {
           </div>
         </SectionWrapper>
         
-        {/* Map Placeholder */}
         <div className="h-[500px] bg-gray-200 w-full relative grayscale hover:grayscale-0 transition-all duration-700">
             <img src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?q=80&w=2070&auto=format&fit=crop" className="w-full h-full object-cover opacity-80" alt="Map" />
             <div className="absolute inset-0 flex items-center justify-center bg-navy/10">

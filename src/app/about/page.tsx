@@ -1,6 +1,6 @@
 "use client";
 
-import { SectionWrapper } from '@/components/layout/SectionWrapper';
+import { SectionWrapper } from '../../components/SectionWrapper';
 import { VISION_STATEMENT, MISSION_STATEMENT, WHO_WE_ARE, CORE_VALUES, CORE_OBJECTIVES, TEAM_MEMBERS } from '@/lib/constants';
 import { Target, Eye, ShieldCheck } from 'lucide-react';
 import { motion } from 'framer-motion';
@@ -8,7 +8,6 @@ import { motion } from 'framer-motion';
 export default function About() {
   return (
     <div className="pt-20">
-      {/* Header */}
       <div className="bg-navy text-white py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-navy via-navy/90 to-navy-light/80 z-10"></div>
         <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=2070&auto=format&fit=crop" className="absolute inset-0 w-full h-full object-cover opacity-40" alt="About background" />
@@ -19,7 +18,6 @@ export default function About() {
         </div>
       </div>
 
-      {/* Who We Are */}
       <SectionWrapper background="white">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -47,7 +45,6 @@ export default function About() {
         </div>
       </SectionWrapper>
 
-      {/* Vision & Mission */}
       <SectionWrapper background="light">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <motion.div 
@@ -78,7 +75,6 @@ export default function About() {
         </div>
       </SectionWrapper>
 
-      {/* Core Values */}
       <SectionWrapper background="white">
         <div className="text-center mb-20">
           <h2 className="text-4xl font-bold font-heading text-navy mb-6">Core Values</h2>
@@ -95,7 +91,6 @@ export default function About() {
         </div>
       </SectionWrapper>
 
-      {/* Our Team */}
       <SectionWrapper background="light">
         <div className="text-center mb-16">
           <h2 className="text-sm font-bold text-secondary uppercase tracking-widest mb-3">Our Leadership</h2>
@@ -132,7 +127,6 @@ export default function About() {
         </div>
       </SectionWrapper>
 
-      {/* Core Objectives */}
       <SectionWrapper background="navy">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
           <div className="lg:col-span-1">

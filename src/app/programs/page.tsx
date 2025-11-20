@@ -1,7 +1,7 @@
 "use client";
 
-import { SectionWrapper } from '@/components/layout/SectionWrapper';
-import { ProgramCard } from '@/components/cards/ProgramCard';
+import { SectionWrapper } from '../../components/SectionWrapper';
+import { ProgramCard } from '../../components/ProgramCard';
 import { PROGRAMS } from '@/lib/constants';
 
 export default function Programs() {
@@ -53,7 +53,6 @@ export default function Programs() {
                </div>
             </div>
           </div>
-          {/* Decorative background elements */}
           <div className="absolute top-0 left-0 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/20 rounded-full blur-3xl"></div>
           <div className="absolute bottom-0 right-0 translate-x-1/2 translate-y-1/2 w-[600px] h-[600px] bg-secondary/20 rounded-full blur-3xl"></div>
         </div>

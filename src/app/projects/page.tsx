@@ -1,6 +1,6 @@
 "use client";
 
-import { SectionWrapper } from '@/components/layout/SectionWrapper';
+import { SectionWrapper } from '../../components/SectionWrapper';
 import { PROJECTS } from '@/lib/constants';
 import { ArrowUpRight } from 'lucide-react';
 import { motion } from 'framer-motion';
