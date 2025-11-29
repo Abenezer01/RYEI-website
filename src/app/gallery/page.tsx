@@ -1,6 +1,7 @@
 "use client";
 
 import { SectionWrapper } from '../../components/SectionWrapper';
+import { useEffect, useRef } from 'react';
 
 export default function Gallery() {
 const photos = [
@@ -39,20 +40,38 @@ const photos = [
       </div>
 
       <SectionWrapper>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {photos.map((src, index) => (
-            <div key={index} className="relative group overflow-hidden rounded-xl h-80">
-              <img 
-                src={src} 
-                alt={`Gallery image ${index + 1}`} 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
-              />
-              <div className="absolute inset-0 bg-navy/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                 <span className="text-white font-bold tracking-wider border-2 border-white px-4 py-2 rounded-lg">VIEW</span>
-              </div>
+        {(() => {
+          const sliderRef = useRef<HTMLDivElement | null>(null);
+          useEffect(() => {
+            const el = sliderRef.current;
+            if (!el) return;
+            const speed = 1.5;
+            const interval = setInterval(() => {
+              el.scrollLeft += speed;
+              if (el.scrollLeft >= el.scrollWidth - el.clientWidth - 1) {
+                el.scrollLeft = 0;
+              }
+            }, 20);
+            return () => clearInterval(interval);
+          }, []);
+
+          return (
+            <div ref={sliderRef} className="flex overflow-x-auto no-scrollbar gap-4 px-4 -mx-4">
+              {[...photos, ...photos.slice(0, 3)].map((src, index) => (
+                <div key={index} className="relative group overflow-hidden rounded-xl h-80 w-80 sm:w-96 flex-shrink-0">
+                  <img 
+                    src={src} 
+                    alt={`Gallery image ${index + 1}`} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                  />
+                  <div className="absolute inset-0 bg-navy/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                     <span className="text-white font-bold tracking-wider border-2 border-white px-4 py-2 rounded-lg">VIEW</span>
+                  </div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
+          );
+        })()}
       </SectionWrapper>
     </div>
   );

@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 export default function About() {
   const listRef = useRef<HTMLDivElement | null>(null);
   const [overflowing, setOverflowing] = useState(false);
+  const directionRef = useRef<1 | -1>(1);
 
   useEffect(() => {
     const check = () => {
@@ -32,6 +33,30 @@ export default function About() {
     if (!el) return;
     el.scrollBy({ left: Math.max(320, el.clientWidth * 0.8), behavior: 'smooth' });
   };
+
+  useEffect(() => {
+    const el = listRef.current;
+    if (!el) return;
+    const slideMs = 2000;
+    const advance = () => {
+      const firstChild = el.firstElementChild as HTMLElement | null;
+      if (!firstChild) return;
+      const gap = parseFloat(getComputedStyle(el).gap || '0');
+      const step = firstChild.offsetWidth + gap;
+      const maxScroll = el.scrollWidth - el.clientWidth;
+      let next = el.scrollLeft + directionRef.current * step;
+      if (next <= 0) {
+        next = 0;
+        directionRef.current = 1;
+      } else if (next >= maxScroll) {
+        next = maxScroll;
+        directionRef.current = -1;
+      }
+      el.scrollTo({ left: next, behavior: 'smooth' });
+    };
+    const interval = setInterval(advance, slideMs);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="pt-20">
