@@ -3,15 +3,34 @@
 import { SectionWrapper } from '../../components/SectionWrapper';
 
 export default function Gallery() {
-  const photos = [
-    "https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?q=80&w=2070",
-    "https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?q=80&w=2070",
-    "https://images.unsplash.com/photo-1542601906990-b4d3fb7d5763?q=80&w=2070",
-    "https://images.unsplash.com/photo-1594708767767-4d7984dca6da?q=80&w=2070",
-    "https://images.unsplash.com/photo-1605116863958-527e2034fa55?q=80&w=2070",
-    "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1888"
-  ];
+const photos = [
+  // 1. Portrait: Young boy with a bright smile (Authentic/Rural vibe)
+  "https://images.unsplash.com/photo-1489980557514-251d61e3eeb6?auto=format&fit=crop&w=1600&q=80",
 
+  // 2. Agriculture: Rural farming context/Greenery
+  "https://images.unsplash.com/photo-1532517891316-72a08e5c03a7?auto=format&fit=crop&w=1600&q=80",
+
+  // 3. Culture: Traditional coffee ceremony/preparation details
+  "https://images.unsplash.com/photo-1523301386671-870d66f5119f?auto=format&fit=crop&w=1600&q=80",
+
+  // 4. Community: Group of children/youth in a village setting
+  "https://images.unsplash.com/photo-1506869640319-fe1a24fd76dc?auto=format&fit=crop&w=1600&q=80",
+
+  // 5. Market/Livelihood: Young woman in a rural market context
+  "https://images.unsplash.com/photo-1526315570857-451996726190?auto=format&fit=crop&w=1600&q=80",
+
+  // 6. Pastoral Life: Herding/Cattle context (Very common for rural youth)
+  "https://images.unsplash.com/photo-1543169107-19d9b736b761?auto=format&fit=crop&w=1600&q=80",
+
+  // 7. Landscape/Environment: The highlands/rural backdrop
+  "https://images.unsplash.com/photo-1469521669194-babb45f8a8d4?auto=format&fit=crop&w=1600&q=80",
+
+  // 8. Portrait: Young girl with traditional braiding/jewelry
+  "https://images.unsplash.com/photo-1516026672322-bc52d61a55d5?auto=format&fit=crop&w=1600&q=80",
+
+  // 9. Entrepreneurship/Work: Hands working with harvest/grain
+  "https://images.unsplash.com/photo-1623851786576-9d8a5996057c?auto=format&fit=crop&w=1600&q=80"
+];
   return (
     <div className="pt-20">
        <div className="bg-navy py-24 text-center">

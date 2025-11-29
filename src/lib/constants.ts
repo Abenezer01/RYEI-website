@@ -123,10 +123,10 @@ export const PROGRAMS: Program[] = [
 ];
 
 export const IMPACT_STATS: Stat[] = [
-  { label: "Youth Trained", value: "5000", suffix: "+" },
-  { label: "Communities Reached", value: "120", suffix: "+" },
-  { label: "Cooperatives Formed", value: "45", suffix: "" },
-  { label: "Projects Launched", value: "85", suffix: "+" },
+  { label: "Youth Trained", value: "100", suffix: "+" },
+  { label: "Communities Reached", value: "0", suffix: "" },
+  { label: "Cooperatives Formed", value: "0", suffix: "" },
+  { label: "Projects Launched", value: "0", suffix: "" },
 ];
 
 export const PROJECTS: Project[] = [
@@ -156,33 +156,55 @@ export const PROJECTS: Project[] = [
   }
 ];
 
+
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: '1',
-    name: 'Dr. Abebe Kebede',
-    role: 'Executive Director',
-    bio: 'Over 15 years of experience in rural development, agricultural economics, and youth advocacy.',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=1000&auto=format&fit=crop'
+    name: 'Elias Abrham',
+    role: 'Founder and president',
+    bio: '',
+    image: '/images/people/Elias Abrham.jpg'
   },
   {
     id: '2',
-    name: 'Sara Tadesse',
-    role: 'Program Coordinator',
-    bio: 'Passionate about youth mentorship, gender equality, and community organizing in rural areas.',
-    image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=1000&auto=format&fit=crop'
+    name: 'Yemisrach Elias',
+    role: 'Deputy chair of the Board',
+    bio: '',
+    image: '/images/people/Yemisrach Elias.jpg'
   },
   {
     id: '3',
-    name: 'Yonas Alemu',
-    role: 'Technical Lead',
-    bio: 'Expert in agri-tech solutions, digital literacy training, and implementing innovation for rural youth.',
-    image: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=1000&auto=format&fit=crop'
+    name: 'Nahom Yonas',
+    role: 'V/president',
+    bio: '',
+    image: '/images/people/Nahom Yonas.jpg'
   },
   {
     id: '4',
-    name: 'Hanna Mekonnen',
-    role: 'Finance & Partnerships',
-    bio: 'Specializes in financial inclusion strategies and building partnerships with local institutions.',
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=1000&auto=format&fit=crop'
+    name: 'Kaba Garoma',
+    role: 'Board of Director',
+    bio: '',
+    image: '/images/people/Kaba Garoma.jpg'
+  },
+  {
+    id: '5',
+    name: 'Adane Tilahun',
+    role: 'Auditor',
+    bio: '',
+    image: '/images/people/Adane Tilahun.jpg'
+  },
+  {
+    id: '6',
+    name: 'Mekdes Telelewu',
+    role: 'Project coordinator',
+    bio: '',
+    image: '/images/people/Mekdes Telelewu.jpg'
+  },
+  {
+    id: '7',
+    name: 'Kiya Bulto',
+    role: 'Board member',
+    bio: '',
+    image: '/images/people/Kiya Bulto.jpg' 
   }
 ];

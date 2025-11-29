@@ -2,10 +2,37 @@
 
 import { SectionWrapper } from '../../components/SectionWrapper';
 import { VISION_STATEMENT, MISSION_STATEMENT, WHO_WE_ARE, CORE_VALUES, CORE_OBJECTIVES, TEAM_MEMBERS } from '@/lib/constants';
-import { Target, Eye, ShieldCheck } from 'lucide-react';
+import { Target, Eye, ShieldCheck, ArrowLeft, ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
 export default function About() {
+  const listRef = useRef<HTMLDivElement | null>(null);
+  const [overflowing, setOverflowing] = useState(false);
+
+  useEffect(() => {
+    const check = () => {
+      const el = listRef.current;
+      if (!el) return;
+      setOverflowing(el.scrollWidth > el.clientWidth + 2);
+    };
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  const scrollLeft = () => {
+    const el = listRef.current;
+    if (!el) return;
+    el.scrollBy({ left: -Math.max(320, el.clientWidth * 0.8), behavior: 'smooth' });
+  };
+
+  const scrollRight = () => {
+    const el = listRef.current;
+    if (!el) return;
+    el.scrollBy({ left: Math.max(320, el.clientWidth * 0.8), behavior: 'smooth' });
+  };
+
   return (
     <div className="pt-20">
       <div className="bg-navy text-white py-32 relative overflow-hidden">
@@ -98,32 +125,53 @@ export default function About() {
           <p className="text-gray-600 mt-4 max-w-2xl mx-auto">Dedicated professionals committed to the vision of rural empowerment.</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {TEAM_MEMBERS.map((member, idx) => (
-            <motion.div 
-              key={member.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              className="group bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1"
-            >
-              <div className="relative overflow-hidden rounded-xl mb-4 aspect-[4/5]">
-                <img 
-                  src={member.image} 
-                  alt={member.name} 
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                   <p className="text-white text-xs leading-relaxed">{member.bio}</p>
+        <div className="relative">
+          {overflowing && (
+            <>
+              <button
+                onClick={scrollLeft}
+                aria-label="Scroll left"
+                className="absolute -left-2 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 shadow-md text-navy p-2 rounded-full hover:bg-primary hover:text-navy transition-colors"
+              >
+                <ArrowLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={scrollRight}
+                aria-label="Scroll right"
+                className="absolute -right-2 top-1/2 -translate-y-1/2 z-10 bg-white border border-gray-200 shadow-md text-navy p-2 rounded-full hover:bg-primary hover:text-navy transition-colors"
+              >
+                <ArrowRight className="h-5 w-5" />
+              </button>
+            </>
+          )}
+
+          <div ref={listRef} className="flex overflow-x-auto no-scrollbar gap-6 snap-x snap-mandatory pb-4 -mx-4 px-4">
+            {TEAM_MEMBERS.map((member, idx) => (
+              <motion.div
+                key={member.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: idx * 0.1 }}
+                viewport={{ once: true }}
+                className="group bg-white rounded-2xl p-4 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:-translate-y-1 flex-shrink-0 w-64 sm:w-72 snap-start"
+              >
+                <div className="relative overflow-hidden rounded-xl mb-4 aspect-[4/5]">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
+                    <p className="text-white text-xs leading-relaxed">{member.bio}</p>
+                  </div>
                 </div>
-              </div>
-              <div className="text-center pb-2">
-                <h4 className="text-lg font-bold font-heading text-navy group-hover:text-primary transition-colors">{member.name}</h4>
-                <p className="text-secondary font-bold text-xs uppercase tracking-wider mt-1">{member.role}</p>
-              </div>
-            </motion.div>
-          ))}
+                <div className="text-center pb-2">
+                  <h4 className="text-lg font-bold font-heading text-navy group-hover:text-primary transition-colors">{member.name}</h4>
+                  <p className="text-secondary font-bold text-xs uppercase tracking-wider mt-1">{member.role}</p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </SectionWrapper>
 
